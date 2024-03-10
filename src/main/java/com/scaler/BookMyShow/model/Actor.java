@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "ACTOR")
 public class Actor extends BaseModel{
 
     private String name;

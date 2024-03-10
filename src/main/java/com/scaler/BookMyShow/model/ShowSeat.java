@@ -13,7 +13,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "SHOWSEAT")
 public class ShowSeat extends BaseModel {
 
     private int price;

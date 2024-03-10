@@ -7,13 +7,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "PAYMENT")
 public class Payment extends BaseModel {
 
-    private LocalDate paymentTime;
+    private LocalDateTime paymentTime;
 
     private double amount;
 
@@ -23,7 +24,7 @@ public class Payment extends BaseModel {
     private Ticket ticket;
 
     @Enumerated(EnumType.STRING)
-    private PaymentStatus payementStatus;
+    private PaymentStatus paymentStatus;
 
     @Enumerated(EnumType.STRING)
     private PaymentMode paymentMode;

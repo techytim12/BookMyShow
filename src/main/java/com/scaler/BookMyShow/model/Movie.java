@@ -9,11 +9,11 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "MOVIE")
 public class Movie extends BaseModel {
 
     private String name;
-    private String desc;
+    private String description;
     @ManyToMany
     private List<Actor> actors;
     @ElementCollection

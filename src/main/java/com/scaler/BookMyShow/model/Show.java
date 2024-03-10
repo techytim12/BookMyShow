@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "SHOW_DETAILS")
 public class Show extends BaseModel{
 
     private LocalDateTime startTime;
@@ -20,7 +20,7 @@ public class Show extends BaseModel{
     private Movie movie;
     @ManyToOne
     private Auditorium auditorium;
-   @OneToMany
+    @OneToMany
     private List<ShowSeat> showSeat;
 }
 

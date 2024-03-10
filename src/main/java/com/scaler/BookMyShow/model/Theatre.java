@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "THEATRE")
 public class Theatre extends BaseModel{
     private String name;
     private String address;

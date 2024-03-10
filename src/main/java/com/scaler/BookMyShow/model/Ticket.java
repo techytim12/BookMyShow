@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "TICKET")
 public class Ticket extends BaseModel {
 
     private LocalDateTime timeOfBooking;

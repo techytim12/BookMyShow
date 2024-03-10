@@ -2,6 +2,7 @@ package com.scaler.BookMyShow.model;
 
 import com.scaler.BookMyShow.model.constant.SeatStatus;
 import com.scaler.BookMyShow.model.constant.SeatType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -10,14 +11,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "SEAT")
 public class Seat extends BaseModel{
 
+    @Column(name = "`row`")
     private int row;
 
     private int col;
 
-    private int seatNumber;
+    private String seatNumber;
 
     @Enumerated(EnumType.STRING)
     private SeatType seatType;

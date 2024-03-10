@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "AUDITORIUM")
 public class Auditorium extends BaseModel{
 
     private String name;
