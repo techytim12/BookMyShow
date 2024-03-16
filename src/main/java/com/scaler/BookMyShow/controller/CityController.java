@@ -1,11 +1,15 @@
 package com.scaler.BookMyShow.controller;
 
 import com.scaler.BookMyShow.dto.CityRequestDTO;
+import com.scaler.BookMyShow.dto.CityResponseDTO;
 import com.scaler.BookMyShow.model.City;
 import com.scaler.BookMyShow.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class CityController {
@@ -24,6 +28,20 @@ public class CityController {
         }
 
         return ResponseEntity.ok("Not Found");
+    }
+
+    @GetMapping("/city")
+    public ResponseEntity getCities(){
+        List<City> cities = cityService.getAllCities();
+        List<CityResponseDTO> responseDTOS = new ArrayList<>();
+
+        for(City city : cities){
+            CityResponseDTO dto = new CityResponseDTO();
+            dto.setName(city.getName());
+            responseDTOS.add(dto);
+        }
+
+        return ResponseEntity.ok(responseDTOS);
     }
 
     @PostMapping("/city")
