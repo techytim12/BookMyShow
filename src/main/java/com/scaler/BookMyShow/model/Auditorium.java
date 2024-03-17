@@ -28,4 +28,11 @@ public class Auditorium extends BaseModel{
 
     @Enumerated(EnumType.STRING)
     private AuditoriumStatus status;
+
+    public Auditorium() {
+    }
+
+    public Auditorium(String name) {
+        this.name = name;
+    }
 }

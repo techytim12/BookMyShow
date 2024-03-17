@@ -11,6 +11,13 @@ import java.util.List;
 @Setter
 @Entity(name = "MOVIE")
 public class Movie extends BaseModel {
+    public Movie() {
+    }
+
+    public Movie(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
     private String name;
     private String description;

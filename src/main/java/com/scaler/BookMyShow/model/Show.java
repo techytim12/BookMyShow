@@ -22,6 +22,14 @@ public class Show extends BaseModel{
     private Auditorium auditorium;
     @OneToMany
     private List<ShowSeat> showSeat;
+
+    public Show() {
+    }
+
+    public Show(LocalDateTime startTime, LocalDateTime endTime) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
 }
 
 /*
