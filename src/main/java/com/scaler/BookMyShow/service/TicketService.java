@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Service
@@ -50,7 +51,8 @@ public class TicketService {
 
         Ticket ticket = new Ticket();
         ticket.setShowSeats(printTicket(showSeatIds));
-        ticket.setTimeOfBooking(LocalDateTime.now());
+        LocalDateTime formattedDateTime = LocalDateTime.parse(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss")), DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss"));
+        ticket.setTimeOfBooking(formattedDateTime);
         double totalAmount = 0;
         for(int showSeatId : showSeatIds){
             totalAmount += showSeatService.getShowSeat(showSeatId).getPrice();
