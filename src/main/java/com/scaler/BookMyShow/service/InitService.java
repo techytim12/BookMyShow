@@ -6,6 +6,7 @@ import com.scaler.BookMyShow.model.constant.SeatStatus;
 import com.scaler.BookMyShow.model.constant.SeatType;
 import com.scaler.BookMyShow.model.constant.ShowSeatStatus;
 import com.scaler.BookMyShow.repository.*;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Log
 public class InitService {
 
     @Autowired
@@ -59,6 +61,8 @@ public class InitService {
             Theatre t = new Theatre(theater);
             theatreRepository.save(t);
         }
+
+        log.info("Theaters created");
 
         City Kochi = cityRepository.findCityByName("Kochi");
         City Chry = cityRepository.findCityByName("CHRY");
